@@ -92,7 +92,7 @@ const updateUserValidator = [
   
   body('role')
     .optional()
-    .isIn(['ADMIN', 'COMMERCIAL', 'POSEUR']).withMessage('Rôle invalide'),
+    .isIn(['ADMIN', 'UTILISATEUR']).withMessage('Rôle invalide'),
   
   body('is_active')
     .optional()
@@ -254,4 +254,5 @@ module.exports = {
   createEspaceValidator,
   updateEspaceValidator,
   idParamValidator
+
 };
