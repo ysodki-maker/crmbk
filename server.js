@@ -19,7 +19,7 @@ const app = express();
 
 // Configuration CORS
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || 'https://crm.cosinus.ma',
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
@@ -141,10 +141,10 @@ const startServer = async () => {
     app.listen(PORT, '0.0.0.0', () => {
       console.log('═══════════════════════════════════════════════════');
       console.log(`🚀 Serveur démarré en mode ${process.env.NODE_ENV || 'development'}`);
-      console.log(`📡 API locale: http://localhost:${PORT}`);
-      console.log(`🌐 API réseau: http://${localIP}:${PORT}`);
-      console.log(`📊 Health check: http://${localIP}:${PORT}/health`);
-      console.log(`🔗 Partage cette URL avec ton équipe: http://${localIP}:${PORT}`);
+      console.log(`📡 API locale: https://corecrm.cosinus.ma`);
+      console.log(`🌐 API réseau: https://corecrm.cosinus.ma/`);
+      console.log(`📊 Health check: https://corecrm.cosinus.ma/health`);
+      console.log(`🔗 Partage cette URL avec ton équipe: https://corecrm.cosinus.ma`);
       console.log('═══════════════════════════════════════════════════');
     });
   } catch (error) {
@@ -161,5 +161,6 @@ process.on('unhandledRejection', (err) => {
 
 // Démarrer l'application
 startServer();
+
 
 module.exports = app;
