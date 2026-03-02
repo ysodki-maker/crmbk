@@ -43,7 +43,7 @@ const register = async (req, res) => {
     const [result] = await promisePool.query(
       `INSERT INTO users (first_name, last_name, email, phone, password, role) 
        VALUES (?, ?, ?, ?, ?, ?)`,
-      [first_name, last_name, email, phone, hashedPassword, role || 'UTILISATEUR']
+      [first_name, last_name, email, phone, hashedPassword, role || 'UTILISATEUR' || 'SOMFY']
     );
 
     // Générer le token
@@ -57,7 +57,7 @@ const register = async (req, res) => {
         email,
         first_name,
         last_name,
-        role: role || 'UTILISATEUR',
+        role: role || 'UTILISATEUR' || 'SOMFY',
         token
       }
     });

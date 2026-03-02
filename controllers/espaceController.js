@@ -20,7 +20,7 @@ const createEspace = async (req, res) => {
       checkQuery += ' AND user_id = ?';
       checkParams.push(req.user.userId);
     }
-
+    
     const [projets] = await connection.query(checkQuery, checkParams);
 
     if (projets.length === 0) {

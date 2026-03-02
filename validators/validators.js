@@ -31,7 +31,7 @@ const registerValidator = [
   
   body('role')
     .optional()
-    .isIn(['ADMIN', 'UTILISATEUR']).withMessage('Rôle invalide')
+    .isIn(['ADMIN', 'UTILISATEUR', 'SOMFY']).withMessage('Rôle invalide')
 ];
 
 const loginValidator = [
@@ -92,7 +92,7 @@ const updateUserValidator = [
   
   body('role')
     .optional()
-    .isIn(['ADMIN', 'COMMERCIAL', 'POSEUR']).withMessage('Rôle invalide'),
+    .isIn(['ADMIN', 'UTILISATEUR', 'SOMFY']).withMessage('Rôle invalide'),
   
   body('is_active')
     .optional()

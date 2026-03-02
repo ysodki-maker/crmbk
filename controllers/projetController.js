@@ -59,7 +59,6 @@ const getAllProjets = async (req, res) => {
       query += ' AND p.user_id = ?';
       params.push(req.user.userId);
     }
-
     if (type_projet) {
       query += ' AND p.type_projet = ?';
       params.push(type_projet);
